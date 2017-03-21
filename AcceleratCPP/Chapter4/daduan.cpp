@@ -1,11 +1,10 @@
 #include <iostream>
-using std::cin;
-using std::cout;
-using std::endl;
+#include <cstdio>
+using namespace std;
 bool IsBig_Endian()
 {
     unsigned short test = 0x1234;
-    cout<<hex<<&test<<endl;
+    cout<<std::hex<<&test<<endl;
     printf("%d\n",*((unsigned char*)(&test+1)));
     if(*((unsigned char*)&test ) == 0x12)
        return true;

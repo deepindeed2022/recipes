@@ -10,18 +10,19 @@ using std::sort;
 template<class T>
 void print(T element){std::cout<<element<<" ";}
 template<class T>
-std::vector<T> randomGenerator(const unsigned int vectorsize) {
+std::vector<T> randomGenerator(const unsigned int vectorsize) 
+{
   std::srand ( unsigned ( std::time(0) ) );
   std::vector<T> myvector;
   // set some values:
   for (int i=1; i<vectorsize; ++i) myvector.push_back(i); // 1 2 3 4 5 6 7 8 9
   // using built-in random generator:
-  std::random_shuffle ( myvector.begin(), myvector.end() );
+  std::random_shuffle( myvector.begin(), myvector.end() );
   //print out content:
   std::cout << "myvector contains:";
   /*for (std::vector<int>::iterator it=myvector.begin(); it!=myvector.end(); ++it)
     std::cout << ' ' << *it;*/
-	std::for_each(myvector.begin(),myvector.end(),print<T>);
+std::for_each(myvector.begin(),myvector.end(),print<T>);
   std::cout << '\n';
   return myvector;
 }

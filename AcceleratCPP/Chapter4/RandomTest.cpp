@@ -52,7 +52,7 @@ static clist mylist ;
 void print(string message="")
 {
 	cout<<message<<endl;
-	for each(char c in mylist)
+	for(auto c : mylist)
 	{
 		cout<<int(c)<<" "<<c<<" ";
 	}

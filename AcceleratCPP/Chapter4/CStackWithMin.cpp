@@ -77,6 +77,6 @@ int main()
 	s->push(12);
 	s->push(13);
 	s->push(23);
-	std::cout<<s->min();
+	std::cout<<s->min()<<std::endl;
 	return 1;
 }

@@ -32,6 +32,7 @@ def get_subfiles(srcdir = None):
 def test_get_subfiles():
     srcdir = "testcase"
     filelist = [
+    	"./testcase/data.txt",
         "./testcase/1.txt",
         "./testcase/folder/1.txt",
         "./testcase/folder/folder2/1.txt",
@@ -39,7 +40,7 @@ def test_get_subfiles():
     filelist2 = [os.path.abspath(i) for i in filelist]
     srcdir = os.path.abspath(srcdir)
     l = get_subfiles(srcdir)
-    assert l == filelist2
+    assert set(l) == set(filelist2)
 
 if __name__ == '__main__':
     test_get_subfiles()

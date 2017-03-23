@@ -51,6 +51,7 @@ def main(dataset, resize_width, resize_height, strip_size,
                        xmin=obj["xmin"], ymin=obj["ymin"], xmax=obj["xmax"], ymax=obj["ymax"], 
                        resize_width=resize_width, resize_height=resize_height)
                 count_map[hy/strip_size][wx/strip_size] = count_map[hy/strip_size][wx/strip_size] + 1
+                #count_map[wx/strip_size][hy/strip_size] = count_map[wx/strip_size][hy/strip_size] + 1
             else:
                 for wx in range(obj["xmin"], obj["xmax"]):
                     for hy in range(obj["ymin"], obj["ymax"]):
@@ -80,20 +81,23 @@ def main(dataset, resize_width, resize_height, strip_size,
 
     write_map(count_map, count_file)
 
-
-
-data_dir = "../data"
-result_dir = "../{}_result".format(TRAIN)
-if TRAIN == "train":
-    annotdir_path = os.path.abspath("{}/{}".format(data_dir, "train/VOC2007/Annotations"))
-elif TRAIN == "test":
-    annotdir_path = os.path.abspath("{}/{}".format(data_dir, "test/VOC2007/Annotations"))
-else:
-    annotdir_path = os.path.abspath("../data/test/test")
-dataset = get_annotations_filepaths(annotdir_path)
-
-
 if __name__ == '__main__':
+
+    if len(sys.argv) > 2:
+        TRAIN = sys.argv[1]
+        strip_size = int(sys.argv[2])
+    else:
+        TRAIN = "train"
+    data_dir = "../data"
+    result_dir = "../result/{}".format(TRAIN)
+    if TRAIN == "train":
+        annotdir_path = os.path.abspath("{}/{}".format(data_dir, "train/VOC2007/Annotations"))
+    elif TRAIN == "test":
+        annotdir_path = os.path.abspath("{}/{}".format(data_dir, "test/VOC2007/Annotations"))
+    else:
+        annotdir_path = os.path.abspath("../data/test/test")
+    dataset = get_annotations_filepaths(annotdir_path)
+
     main(dataset, resize_width, resize_height, strip_size, 
          have_half, is_cover, result_dir)
 

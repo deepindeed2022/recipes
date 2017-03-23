@@ -61,5 +61,8 @@ def draw_bar3d(data, width, height, strip_size, filename):
     dy = dx.copy()
 
     ax.bar3d(xpos, ypos, zpos, dx, dy, hist, color='r', zsort='average')
+    # ax.annotate(hist, va="bottom", ha="center")
+
+    # ax.annotate("", xy=zip(xpos, ypos), xytext=hist)
     plt.savefig(filename)
     plt.close()

@@ -32,8 +32,8 @@ def get_subfiles(srcdir = None):
 def test_get_subfiles():
     srcdir = "testcase"
     filelist = [
-    	"./testcase/data.txt",
         "./testcase/1.txt",
+    	"./testcase/data.txt",
         "./testcase/folder/1.txt",
         "./testcase/folder/folder2/1.txt",
         "./testcase/folder2/1.txt"]

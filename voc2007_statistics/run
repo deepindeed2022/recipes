@@ -1,0 +1,15 @@
+#! /bin/sh
+mkdir -p result/test
+mkdir -p result/train
+cd src
+# run scripts
+echo "start analysis train dataset"
+python main.py "train" | tee trainlog.log
+echo "end finished train dataset"
+
+echo "start analysis test dataset"
+python main.py "test" | tee testlog.log
+echo "end finished test dataset"
+cd ..
+
+# scp result.tar.gz  

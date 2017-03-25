@@ -23,6 +23,14 @@ typedef std::vector<int>(*PF_RET_VOID)(FUNC_PARAM);
 
 void test_all(PF_RET_VOID p, int n, int k);
 
+#include <sys/time.h>
+static long get_current_time()
+{
+        struct timeval tv;
+        gettimeofday(&tv, NULL);
+        return tv.tv_sec * 1000000 + tv.tv_usec;
+}
+
 // Time is O(n) + O(nlogn) = O(nlogn))
 std::vector<int> min_k_num_sort (FUNC_PARAM)
 {

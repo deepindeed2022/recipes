@@ -1,5 +1,5 @@
 # configure the super parameters
-resize_width = 400
+resize_width = 300
 resize_height = 300
 strip_size = 10
 have_half = True

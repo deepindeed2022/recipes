@@ -29,15 +29,15 @@ def get_width_height(xmin, ymin, xmax, ymax):
 	return xmax-xmin+1, ymax-ymin+1
 
 
-def getwh_center_point(width, height, xmin, ymin, owidth, oheight, resize_width=None, resize_height=None):
+def getwh_center_point(width, height, x, y, owidth, oheight, resize_width=None, resize_height=None):
 	assert(width > 0 and height > 0)
-	assert(xmin <= width and ymin <= height)
+	assert(x <= width and y <= height)
 	assert(owidth <= width and oheight <= height)
 	if(resize_height == None or resize_width == None): 
 		resize_width = width
 		resize_height = height
 
-	return math.trunc(((xmin + owidth/2)/(width))*resize_width), math.trunc(((ymin + oheight/2)/(height))*resize_height)
+	return math.trunc(((x + owidth/2)/(width))*resize_width), math.trunc(((y + oheight/2)/(height))*resize_height)
 
 
 
@@ -55,3 +55,4 @@ def get_center_point(width, height, xmin, ymin, xmax, ymax, resize_width=None, r
 if __name__ == '__main__':
 
 	print get_center_point(200, 300, 1, 3, 150, 120, 400, 400)
+	print getwh_center_point(200, 300, 1, 3, 150, 120, 400, 400)

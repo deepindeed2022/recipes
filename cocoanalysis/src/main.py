@@ -25,17 +25,21 @@ def main(dataset, resize_width, resize_height, strip_size,
      
     count_map = [[0 for _ in xrange(resize_width/strip_size)] for _ in xrange(resize_height/strip_size)]
 
-    image_count = 0
     images = getImages(dataset)
-    for picid, image in images.items():
+
+    image_count = 0
+    for image in images.values():
         image_count += 1
         width = image["width"]
         height = image["height"]
+        assert width > 0
+        assert height > 0
         objs = image['objects']
-        for obj in objs:
 
+        for obj in objs:
             objw, objh = obj[2], obj[3]
-            
+            if not (objw > 0 and objh > 0):
+                continue
             if not have_half:
                 wh_aspect_radio[round(float(objw)/objh)] += 1
                 hw_aspect_radio[round(float(objh)/objw)] += 1
@@ -44,14 +48,14 @@ def main(dataset, resize_width, resize_height, strip_size,
                 hw_aspect_radio[float(round(float(objh*2)/objw))/2] += 1
 
             # classname we not use it, but have the information
-
             wx, hy = getwh_center_point(width=width, height=height, 
-                   xmin=obj[0], ymin=obj[1], owidth=obj[2], oheight=obj[3], 
+                   x=obj[0], y=obj[1], owidth=objw, oheight=objh, 
                    resize_width=resize_width, resize_height=resize_height)
             count_map[hy/strip_size][wx/strip_size] = count_map[hy/strip_size][wx/strip_size] + 1
-            #count_map[wx/strip_size][hy/strip_size] = count_map[wx/strip_size][hy/strip_size] + 1
-        if image_count % 10 == 0:
-            print "have get %d images" %(image_count)
+
+        if image_count % 1000 == 0:
+            print "# finish statistic %d images" % (image_count, )
+    
     # width
     x = [i*strip_size for _ in xrange(resize_height/strip_size) for i in xrange(resize_width/strip_size)]
     # height
@@ -82,10 +86,19 @@ if __name__ == '__main__':
     data_dir = "../annotations"
     result_dir = "../result/{}".format(TRAIN)
     annot_path=""
-    if TRAIN == "train":
-        annot_path = os.path.abspath("{}/{}".format(data_dir, "instances_train2014.json"))
-    elif TRAIN == "test":
+    if TRAIN == "test":
         annot_path = os.path.abspath("{}/{}".format(data_dir, "instances_val2014.json"))
-    print "init params finished"
+    elif TRAIN == "train":
+        annot_path = os.path.abspath("{}/{}".format(data_dir, "instances_train2014.json"))
+    else:
+        annot_path = os.path.abspath("{}/{}".format(data_dir, "test.json"))
+
+    print "------Initial Parameters-------------"
+    print "annotation path:", annot_path
+    print "resize_width:", resize_width
+    print "resize_height:", resize_height
+    print "strip_size:", strip_size
+    
     main(annot_path, resize_width, resize_height, strip_size, 
          have_half, is_cover, result_dir)
+    print "------------Finished------------------"

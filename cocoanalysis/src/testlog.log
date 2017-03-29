@@ -1,0 +1,80 @@
+------Initial Parameters-------------
+annotation path: /home/charles/Repo/recipes/cocoanalysis/annotations/instances_val2014.json
+resize_width: 300
+resize_height: 300
+strip_size: 5
+start read /home/charles/Repo/recipes/cocoanalysis/annotations/instances_val2014.json
+
+
+-------------start combined the images----------------
+
+
+1000 images information
+2000 images information
+3000 images information
+4000 images information
+5000 images information
+6000 images information
+7000 images information
+8000 images information
+9000 images information
+10000 images information
+11000 images information
+12000 images information
+13000 images information
+14000 images information
+15000 images information
+16000 images information
+17000 images information
+18000 images information
+19000 images information
+20000 images information
+21000 images information
+22000 images information
+23000 images information
+24000 images information
+25000 images information
+26000 images information
+27000 images information
+28000 images information
+29000 images information
+30000 images information
+31000 images information
+32000 images information
+33000 images information
+34000 images information
+35000 images information
+36000 images information
+37000 images information
+38000 images information
+39000 images information
+40000 images information
+---------------total images number:40504---------------
+
+
+-------------start insert bbox----------------
+
+
+1000 image objects inserted
+# finish statistic 1000 images
+# finish statistic 2000 images
+# finish statistic 3000 images
+# finish statistic 4000 images
+# finish statistic 5000 images
+# finish statistic 6000 images
+# finish statistic 7000 images
+# finish statistic 8000 images
+# finish statistic 9000 images
+# finish statistic 10000 images
+# finish statistic 11000 images
+# finish statistic 12000 images
+# finish statistic 13000 images
+# finish statistic 14000 images
+# finish statistic 15000 images
+# finish statistic 16000 images
+# finish statistic 17000 images
+# finish statistic 18000 images
+# finish statistic 19000 images
+# finish statistic 20000 images
+# finish statistic 21000 images
+# finish statistic 22000 images

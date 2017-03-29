@@ -1,6 +1,6 @@
 #! /bin/sh
-# mkdir -p result/test
-# mkdir -p result/train
+mkdir -p result/test
+mkdir -p result/train
 cd src
 # run scripts
 echo "start analysis train dataset"
@@ -13,3 +13,5 @@ python main.py "test" 10 | tee testlog.log
 python main.py "test" 5 | tee testlog.log
 echo "end finished test dataset"
 cd ..
+
+tar -cvf result.tar  result

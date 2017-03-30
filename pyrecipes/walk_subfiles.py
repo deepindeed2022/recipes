@@ -29,6 +29,13 @@ def get_subfiles(srcdir = None):
             os.path.walk(sdir, process_dir, "")
         return filelist
 
+def list_dir(path, suffix ='.txt'):
+    l = os.listdir(path) # 列出目录下的所有文件和目录
+    result = []
+    for line in l:
+        if line.endswith(suffix):
+            result.append(os.path.join(path, line))
+    return result
 def test_get_subfiles():
     srcdir = "testcase"
     filelist = [
@@ -44,3 +51,4 @@ def test_get_subfiles():
 
 if __name__ == '__main__':
     test_get_subfiles()
+    print list_dir("testcase", '.txt')

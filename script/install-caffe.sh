@@ -1,10 +1,10 @@
 # CAFFE INSTALLATION: http://caffe.berkeleyvision.org/installation.html
 
 # Keep Ubuntu or Debian up to date
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get dist-upgrade
-sudo apt-get autoremove
+# sudo apt-get update
+# sudo apt-get upgrade
+# sudo apt-get dist-upgrade
+# sudo apt-get autoremove
 
 # DEPENDENCIES
 sudo apt-get install libopenblas-dev
@@ -21,11 +21,11 @@ sudo apt-get install libleveldb-dev
 sudo apt-get install libsnappy-dev
 
 # INTERFACES (Python 3)
-sudo apt-get install python3-dev python3-numpy libboost-python-dev
+# sudo apt-get install python3-dev python3-numpy libboost-python-dev
 
 # CLONING AND COMPILING
-git clone https://github.com/BVLC/caffe.git
-cd caffe
+# git clone https://github.com/BVLC/caffe.git
+# cd caffe
 
 # cp Makefile.config.example Makefile.config
 # Adjust Makefile.config (for example, if using Anaconda Python)

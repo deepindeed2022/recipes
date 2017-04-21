@@ -1,9 +1,9 @@
 # KEEP UBUNTU OR DEBIAN UP TO DATE
 
-sudo apt-get -y update
-sudo apt-get -y upgrade
-sudo apt-get -y dist-upgrade
-sudo apt-get -y autoremove
+# sudo apt-get -y update
+# sudo apt-get -y upgrade
+# sudo apt-get -y dist-upgrade
+# sudo apt-get -y autoremove
 
 
 # INSTALL THE DEPENDENCIES
@@ -24,13 +24,13 @@ sudo apt-get install -y libdc1394-22-dev libavcodec-dev libavformat-dev libswsca
 sudo apt-get install -y libtbb-dev libeigen3-dev
 
 # Python:
-sudo apt-get install -y python-dev python-tk python-numpy python3-dev python3-tk python3-numpy
+# sudo apt-get install -y python-dev python-tk python-numpy python3-dev python3-tk python3-numpy
 
 # Java:
-sudo apt-get install -y ant default-jdk
+# sudo apt-get install -y ant default-jdk
 
-# Documentation:
-sudo apt-get install -y doxygen
+# # Documentation:
+# sudo apt-get install -y doxygen
 
 
 # INSTALL THE LIBRARY (YOU CAN CHANGE '3.1.0' FOR THE LAST STABLE VERSION)
@@ -48,7 +48,8 @@ make -j4
 sudo make install
 sudo ldconfig
 
-
+cd ..
+cd ..
 # EXECUTE SOME OPENCV EXAMPLES AND COMPILE A DEMONSTRATION
 
 # To complete this step, please visit 'http://milq.github.io/install-opencv-ubuntu-debian'.

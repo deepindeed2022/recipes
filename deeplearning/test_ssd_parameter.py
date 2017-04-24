@@ -153,7 +153,7 @@ def main():
     for i in xrange(len(steps)):
         cell_offsets[i] = cell_offsets[i]/(min_dim/layer_widths[i])
 
-    
+    print cell_offsets
     kmeans_ratios = [1.60, 2.0, 3.0]
     # inter_layer_depth = [[256], [256], [256], [256], [256], [256]]
     # prediction_kernels= [5, 5, 3, 3, 3, 3]

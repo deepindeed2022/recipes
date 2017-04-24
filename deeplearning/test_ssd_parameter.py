@@ -159,7 +159,7 @@ def main():
     # prediction_kernels= [5, 5, 3, 3, 3, 3]
     # prediction_pads = [2,2,1,1,1,1]
 
-    img_width = img_height = 321
+    img_width = img_height = min_dim
     flip = True
     def print_init():
         print "Layer:",

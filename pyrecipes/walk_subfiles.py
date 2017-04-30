@@ -30,7 +30,7 @@ def get_subfiles(srcdir = None):
         return filelist
 
 def list_dir(path, suffix ='.txt'):
-    l = os.listdir(path) # 列出目录下的所有文件和目录
+    l = os.listdir(path)
     result = []
     for line in l:
         if line.endswith(suffix):

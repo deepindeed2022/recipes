@@ -18,7 +18,7 @@ target_file = 'lianjia.csv'
 def crawler_cite(cite, requesturl, pages):
    # 根据网页数设置范围
    for k in range(1, pages + 1):
-      time.sleep(random.random()*120)
+      print ('start '+ requesturl % str(k)).encode('utf-8')
       # 根据网址获取网页
       req = urllib2.Request(requesturl % str(k))
       # 建立csv存储文件，wb写 a+追加模式
@@ -73,11 +73,14 @@ def crawler_cite(cite, requesturl, pages):
       # 将合并的数据存入csv
       writer.writerows(data)
       csvfile.close()
-      print  "%s 第%d页完成" % (cite, k)
+      wait_time = random.random()*120 
+      print  "%s 第%d页完成, 等待%d s" % (cite, k, wait_time)
+      time.sleep(wait_time)
 
 
 def main():
-   for (cite, requesturl, pages) in cites[:1]:
+   for (cite, requesturl, pages) in cites:
+      #print cite, requesturl, pages
       crawler_cite(cite, requesturl, pages)
 
 if __name__ == '__main__':

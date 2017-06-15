@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="lib" path="C:/Users/Test/workspace/3rdlib/UCanAccess-4.0.2/ucanaccess-4.0.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Test/workspace/3rdlib/UCanAccess-4.0.2/lib/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Test/workspace/3rdlib/UCanAccess-4.0.2/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/server/lib/cdse-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/server/lib/jna-3.3.0.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/server/lib/jts-1.13.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/server/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/server/lib/spatial4j-0.4.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Test/workspace/3rdlib/UCanAccess-4.0.2/lib/hsqldb.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Test/workspace/3rdlib/UCanAccess-4.0.2/lib/jackcess-2.1.6.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/elasticsearch-5.4.1/lib/log4j-1.2-api-2.8.2.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/elasticsearch-5.4.1/lib/log4j-api-2.8.2.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/elasticsearch-5.4.1/lib/log4j-core-2.8.2.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/server/lib/core/lucene-analyzers-common-4.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/server/lib/core/lucene-codecs-4.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/server/lib/core/lucene-core-4.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/server/lib/core/lucene-grouping-4.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/server/lib/core/lucene-highlighter-4.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/server/lib/core/lucene-join-4.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/server/lib/core/lucene-memory-4.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/server/lib/core/lucene-misc-4.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/server/lib/core/lucene-queries-4.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/server/lib/core/lucene-queryparser-4.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/server/lib/core/lucene-sandbox-4.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/server/lib/core/lucene-spatial-4.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/server/lib/core/lucene-suggest-4.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Develop/server/lib/sigar/sigar-1.6.4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

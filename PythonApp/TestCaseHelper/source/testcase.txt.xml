@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='utf8'?>
+<testcases><testcase name="测试用例名字"><summary> 测试用例摘要</summary>
+<preconditions>Precondition: e.g.提交《测试报告》/《测试用例执行报告》或其他测试报告类文档</preconditions>
+<steps><step><step_number>1</step_number>
+<actions>&lt;p&gt;测试步骤Step1：do some thing　
+&lt;/p&gt;
+&lt;p&gt;输入数据：what the fuck   </actions>
+<expectedresults>  期望的结果,当前期望结果只能在一行
+&lt;/p&gt;</expectedresults>
+<execution_type>1</execution_type>
+</step>
+<step><step_number>2</step_number>
+<actions>测试步骤Step2 ：做一些事情 </actions>
+<expectedresults> step2 excepted result，呵呵</expectedresults>
+<execution_type>1</execution_type>
+</step>
+<step><step_number>3</step_number>
+<actions>&lt;p&gt;测试步骤Step3：do some thing　
+&lt;/p&gt;
+&lt;p&gt;输入数据：1 2 3 4 5 5 </actions>
+<expectedresults>  期望的结果,当前期望结果只能在一行
+&lt;/p&gt;</expectedresults>
+<execution_type>1</execution_type>
+</step>
+</steps>
+<custom_fields><custom_field><name>测试用例-检测参数</name>
+<value>功能</value>
+</custom_field>
+<custom_field><name>测试环境需求-测试用例</name>
+<value>
+测试机:兆芯C1  
+硬件配置:
+    型号：兆芯C 
+    CPU：C-QuadCore C4600@2.0GHz 4核 
+    内存：8192MB
+	硬盘：200G     
+软件配置:
+    操作系统：cdos 1.10.0 - 0728 
+    中间件：wine1.8.5
+</value>
+</custom_field>
+<custom_field><name>测试用例设计日期</name>
+<value>1497916800</value>
+</custom_field>
+</custom_fields>
+<requirements><requirement><req_spec_title>[用户文档测试]</req_spec_title>
+<doc_id>REQ-YHWD-1-1</doc_id>
+<title>提交测试文档，需求可有可无
+</title>
+</requirement>
+</requirements>
+</testcase>
+<testcase name="测试用例名字"><summary>  The test case target or summary</summary>
+<preconditions>Precondition: e.g.提交《测试报告》/《测试用例执行报告》或其他测试报告类文档</preconditions>
+<steps><step><step_number>1</step_number>
+<actions>&lt;p&gt;&lt;p&gt;测试步骤Step1：现在是可以分行写的
+&lt;/p&gt;
+&lt;p&gt;输入数据：what's that?
+&lt;/p&gt;&lt;/p&gt;
+&lt;p&gt;</actions>
+<expectedresults>  期望的结果
+&lt;/p&gt;</expectedresults>
+<execution_type>1</execution_type>
+</step>
+<step><step_number>2</step_number>
+<actions>测试步骤Step2 ：做一些事情 </actions>
+<expectedresults> step2 excepted result</expectedresults>
+<execution_type>1</execution_type>
+</step>
+<step><step_number>3</step_number>
+<actions>看着办吧  </actions>
+<expectedresults> step3 excepted result</expectedresults>
+<execution_type>1</execution_type>
+</step>
+</steps>
+<custom_fields><custom_field><name>测试用例-检测参数</name>
+<value>功能</value>
+</custom_field>
+<custom_field><name>测试环境需求-测试用例</name>
+<value>
+测试机:兆芯C1  
+硬件配置:
+    型号：兆芯C 
+    CPU：C-QuadCore C4600@2.0GHz 4核 
+    内存：8192MB
+	硬盘：200G     
+软件配置:
+    操作系统：cdos 1.10.0 - 0728 
+    中间件：wine1.8.5
+</value>
+</custom_field>
+<custom_field><name>测试用例设计日期</name>
+<value>1497916800</value>
+</custom_field>
+</custom_fields>
+<requirements />
+</testcase>
+<testcase name="测试用例名字2"><summary> 测试用例摘要</summary>
+<preconditions />
+<steps><step><step_number>1</step_number>
+<actions>测试步骤Step1：do some thing　输入数据：what the fuck   </actions>
+<expectedresults>  期望的结果</expectedresults>
+<execution_type>1</execution_type>
+</step>
+<step><step_number>2</step_number>
+<actions>测试步骤Step2 ：做一些事情 </actions>
+<expectedresults> step2 excepted result</expectedresults>
+<execution_type>1</execution_type>
+</step>
+<step><step_number>3</step_number>
+<actions>看着办吧  </actions>
+<expectedresults> step3 excepted result</expectedresults>
+<execution_type>1</execution_type>
+</step>
+</steps>
+<custom_fields><custom_field><name>测试用例-检测参数</name>
+<value>功能</value>
+</custom_field>
+<custom_field><name>测试环境需求-测试用例</name>
+<value>
+测试机:兆芯C1  
+硬件配置:
+    型号：兆芯C 
+    CPU：C-QuadCore C4600@2.0GHz 4核 
+    内存：8192MB
+	硬盘：200G     
+软件配置:
+    操作系统：cdos 1.10.0 - 0728 
+    中间件：wine1.8.5
+</value>
+</custom_field>
+<custom_field><name>测试用例设计日期</name>
+<value>1497916800</value>
+</custom_field>
+</custom_fields>
+<requirements><requirement><req_spec_title>[用户文档测试]</req_spec_title>
+<doc_id>REQ-YHWD-1-2</doc_id>
+<title>提交测试文档
+</title>
+</requirement>
+</requirements>
+</testcase>
+</testcases>

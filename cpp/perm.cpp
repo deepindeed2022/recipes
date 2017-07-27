@@ -55,10 +55,10 @@ void perm_backtrack(std::vector<int>& l, const int n)
 
 void dfs(std::vector<int>& a, std::vector<bool>& book, int step, const int n)
 {
-	int i;
 	if(step == n)
 	{
-		for(auto i: a)std::cout << i << " ";
+		for(int i: a)
+			std::cout << i << " ";
 		std::cout << std::endl;
 	}
 	else
@@ -77,13 +77,15 @@ void dfs(std::vector<int>& a, std::vector<bool>& book, int step, const int n)
 }
 int main(int argc, char const *argv[])
 {
-	// for(int i = 0; i < 3; ++i) a[i] = i+1;
-	// perm_backtrack(a, 3);
-	// for(int i = 0; i < 3; ++i) a[i] = i+1;
-	// perm_fast(a, 3);
 	const int n = 3;
-	std::vector<int> a(3, 0);
-	std::vector<bool> book(3, false);
-	dfs(a, book, 0, 3);
+	std::vector<int> a(n, 0);
+	for(int i = 0; i < n; ++i) a[i] = i+1;
+	perm_backtrack(a, n);
+	std::cout <<"------------------------\n";
+	for(int i = 0; i < n; ++i) a[i] = i+1;
+	perm_fast(a, n);
+	std::cout <<"------------------------\n";
+	std::vector<bool> book(n, false);
+	dfs(a, book, 0, n);
 	return 0;
 }

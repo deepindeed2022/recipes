@@ -36,6 +36,7 @@ def list_dir(path, suffix ='.txt'):
         if line.endswith(suffix):
             result.append(os.path.join(path, line))
     return result
+
 def test_get_subfiles():
     srcdir = "testcase"
     filelist = [

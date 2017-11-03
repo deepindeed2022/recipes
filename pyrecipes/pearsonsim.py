@@ -26,6 +26,6 @@ def cor(user1,user2):
 
 if __name__ == '__main__':
 	user1 = [5.0, 3.0, 2.5]
-	user2 = [4.0, 3.0, 2.0]
+	user2 = [1.0, 3.0, 2.0]
 	print cov(user1, user2)
 	print cor(user1, user2)

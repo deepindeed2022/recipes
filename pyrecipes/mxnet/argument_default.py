@@ -3,9 +3,7 @@ import os
 import argparse
 import logging
 logging.basicConfig(level=logging.DEBUG)
-from common import find_mxnet, data, fit
-from common.util import download_file
-import mxnet as mx
+
 
 def add_data_args(parser):
     data = parser.add_argument_group('Data', 'the input images')
@@ -59,6 +57,50 @@ def set_data_aug_level(aug, level):
         aug.set_defaults(max_random_rotate_angle=10, max_random_shear_ratio=0.1, max_random_aspect_ratio=0.25)
 
 
+def add_fit_args(parser):
+    """
+    parser : argparse.ArgumentParser
+    return a parser added with args required by fit
+    """
+    train = parser.add_argument_group('Training', 'model training')
+    train.add_argument('--network', type=str,
+                       help='the neural network to use')
+    train.add_argument('--num-layers', type=int,
+                       help='number of layers in the neural network, required by some networks such as resnet')
+    train.add_argument('--gpus', type=str,
+                       help='list of gpus to run, e.g. 0 or 0,2,5. empty means using cpu')
+    train.add_argument('--kv-store', type=str, default='device',
+                       help='key-value store type')
+    train.add_argument('--num-epochs', type=int, default=100,
+                       help='max num of epochs')
+    train.add_argument('--lr', type=float, default=0.1,
+                       help='initial learning rate')
+    train.add_argument('--lr-factor', type=float, default=0.1,
+                       help='the ratio to reduce lr on each step')
+    train.add_argument('--lr-step-epochs', type=str,
+                       help='the epochs to reduce the lr, e.g. 30,60')
+    train.add_argument('--optimizer', type=str, default='sgd',
+                       help='the optimizer type')
+    train.add_argument('--mom', type=float, default=0.9,
+                       help='momentum for sgd')
+    train.add_argument('--wd', type=float, default=0.0001,
+                       help='weight decay for sgd')
+    train.add_argument('--batch-size', type=int, default=128,
+                       help='the batch size')
+    train.add_argument('--disp-batches', type=int, default=20,
+                       help='show progress for every n batches')
+    train.add_argument('--model-prefix', type=str,
+                       help='model prefix')
+    parser.add_argument('--monitor', dest='monitor', type=int, default=0,
+                        help='log network parameters every N iters if larger than 0')
+    train.add_argument('--load-epoch', type=int,
+                       help='load the model on an epoch using the model-load-prefix')
+    train.add_argument('--top-k', type=int, default=0,
+                       help='report the top-k accuracy. 0 means no report.')
+    train.add_argument('--test-io', type=int, default=0,
+                       help='1 means test reading speed without training')
+    return train
+
 
 
 if __name__ == '__main__':
@@ -68,10 +110,10 @@ if __name__ == '__main__':
     # parse args
     parser = argparse.ArgumentParser(description="train cifar100",
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    fit.add_fit_args(parser)
-    data.add_data_args(parser)
-    data.add_data_aug_args(parser)
-    data.set_data_aug_level(parser, 2)
+    add_fit_args(parser)
+    add_data_args(parser)
+    add_data_aug_args(parser)
+    set_data_aug_level(parser, 2)
     parser.set_defaults(
         # network
         network        = 'cifar10',
@@ -96,11 +138,3 @@ if __name__ == '__main__':
 
     parser.add_argument('--log', dest='log_file', type=str, default="train.log",
                     help='save training log to file')
-
-    # load network
-    from importlib import import_module
-    net = import_module('symbols.'+args.network)
-    sym = net.get_symbol(**vars(args))
-
-    # train
-    fit.fit(args, sym, data.get_rec_iter)

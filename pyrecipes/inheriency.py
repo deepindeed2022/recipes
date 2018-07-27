@@ -6,7 +6,7 @@ class Init(object):
 
     def __init__(self, value):
         self.val = value
-        print "init", self.val
+        print "Init", self.val
 
 
 class Mul5(Init):

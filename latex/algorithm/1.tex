@@ -1,0 +1,36 @@
+\documentclass[8pt,a4paper,twocolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{algorithm2e}
+% \usepackage{algorithm}  
+\usepackage{algorithmic} 
+
+\begin{document}
+
+\begin{algorithm}
+	\caption{The algorithm of GetAllColumnIndices.}%算法标题
+	\begin{algorithmic}[1]%一行一个标行号
+		\REQUIRE{$\mathrm{thread\_start}$, $tid$}
+		\ENSURE{$\mathrm{col\_idxs}$}
+		\STATE {$ start\leftarrow \mathrm{thread\_start}[tid] + blockColStart$,
+		$curPos\leftarrow tid*\mathrm{NNZ\_PER\_THREAD} + bid*\mathrm{NNZ\_PER\_BLOCK}$
+		$left\leftarrow \mathrm{NNZ\_PER\_THREAD},len\leftarrow\mathrm{col\_len}[start + 1] - curPos$}
+		\STATE $i \leftarrow 0$
+		\WHILE{ $i < \mathrm{NNZ\_PER\_THREAD}$ }
+		\IF{$len \ge left$}
+			\FOR{$j=0$ to $left$}
+				\STATE  $\mathrm{col\_idxs}[i$$++$$] \leftarrow start$
+			\ENDFOR
+		\ELSE
+			\FOR{$j=0$ to $len$}
+				\STATE  $\mathrm{col\_idxs}[i$$++$$] \leftarrow start$
+			\ENDFOR
+			\STATE $ start\leftarrow start - 1$, $ left \leftarrow left - len$
+  			\STATE $ len \leftarrow \mathrm{col\_len}[start + 1] - curPos$
+		\ENDIF
+		\ENDWHILE
+	\end{algorithmic}
+\end{algorithm}
+
+\end{document}
+
+
